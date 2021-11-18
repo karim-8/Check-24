@@ -36,6 +36,7 @@ class SplashScreenViewController: UIViewController {
     //MARK:- VIEW DID LAYOUT SUBVIEW
     override func viewDidLayoutSubviews() {
         check_24_Logo.center = view.center
+        
     }
     
     //MARK:- VIEW DID APPEAR
@@ -48,15 +49,15 @@ class SplashScreenViewController: UIViewController {
     
     //MARK:- SET BACKGROUND COLOR
     private func setBackGroundColor() {
-        view.backgroundColor = UIColor(red: 19/255, green: 224/255, blue: 220/255, alpha: 1.0)
+        view.backgroundColor = UIColor(red: 0/255, green: 117/255, blue: 227/255, alpha: 1.0)
     }
     
     //MARK:- CRETATE SPLASH LOGO
     private func createSplashLogo() {
         check_24_Logo = {
-            let logoImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 250, height: 150))
-            logoImage.image = UIImage(named: "bevy-logo")
-            logoImage.sizeToFit()
+            let logoImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+            logoImage.image = UIImage(named: "chech-logo")
+            //logoImage.sizeToFit()
             return logoImage
         }()
         view.addSubview(check_24_Logo)
