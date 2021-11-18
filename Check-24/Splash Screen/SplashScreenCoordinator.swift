@@ -16,7 +16,6 @@ class SplashScreenCoordinator {
     }
     
     //MARK:- NAVIGATE TO
-    //data to be send
     func navigateTo() {
         let viewModel: ProductsHomeViewModel = ProductsHomeViewModel()
         let coordinator: ProductsHomeCoordinator = ProductsHomeCoordinator()
@@ -25,12 +24,13 @@ class SplashScreenCoordinator {
         
         productsHomeviewcotroller?.viewModel = viewModel
         productsHomeviewcotroller?.coordinator = coordinator
-                
+        
         let navigationController = UINavigationController(rootViewController: productsHomeviewcotroller!)
         navigationController.modalTransitionStyle = .crossDissolve
         navigationController.modalPresentationStyle = .fullScreen
-
+        
         navigationView?.present(navigationController, animated: true, completion: nil)
     }
+    
 }
 
