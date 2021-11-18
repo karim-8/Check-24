@@ -101,5 +101,4 @@ class SplashScreenViewModel {
             self.headerSubTitle = products.header?.headerDescription ?? ""
         }
     }
-    
 }
