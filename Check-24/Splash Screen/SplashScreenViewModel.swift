@@ -94,11 +94,11 @@ class SplashScreenViewModel {
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         decoder.dateDecodingStrategy = .secondsSince1970
         let eventsData = try? decoder.decode(BaseProduct.self, from: jsonData)
-        if let events = eventsData {
-            self.productDetails = events.products ?? [Products]()
-            self.productFilters = events.filters ?? [String]()
-            self.headerTitle = events.header?.headerTitle ?? ""
-            self.headerSubTitle = events.header?.headerDescription ?? ""
+        if let products = eventsData {
+            self.productDetails = products.products ?? [Products]()
+            self.productFilters = products.filters ?? [String]()
+            self.headerTitle = products.header?.headerTitle ?? ""
+            self.headerSubTitle = products.header?.headerDescription ?? ""
         }
     }
     

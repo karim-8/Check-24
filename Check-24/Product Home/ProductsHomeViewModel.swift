@@ -18,12 +18,12 @@ class ProductsHomeViewModel {
     
     
     //MARK:- GET PRODUCTS DATA
-    func getEventsData(linkType: UrlEndPoints) {
+    func getProductsData(linkType: UrlEndPoints) {
         let url = Request(url: linkType.rawValue, param: "")
         NetworkClient().get(request: url) { [weak self] result in
             switch result {
-            case .success(let event):
-                self?.decodeResult(jsonData: event)
+            case .success(let product):
+                self?.decodeResult(jsonData: product)
             case .failure(let error):
                 print("Error in VM... \(error)")
             }
@@ -86,7 +86,7 @@ class ProductsHomeViewModel {
     
     //MARK:- GET EVENT BY TYPE
     func getEventByType(currentPageIndex: Int, productsTable: UITableView) {
-        getEventsData(linkType: .ProductUrl)
+        getProductsData(linkType: .ProductUrl)
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             let updatedEvents = self.getProductDetails()
             self.productDetails = updatedEvents

@@ -7,7 +7,7 @@
 
 import UIKit
 
-//MARK:- EVENTS TABLE VIEW DELEGATE & DATA SOURCE
+//MARK:- PRODUCTS TABLE VIEW DELEGATE & DATA SOURCE
 extension ProductsHomeViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

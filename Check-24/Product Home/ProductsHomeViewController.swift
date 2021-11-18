@@ -163,7 +163,7 @@ class ProductsHomeViewController: UIViewController {
     
     //MARK:- REFRESH CONTENT
     func refreshContent(){
-        viewModel?.getEventsData(linkType: .ProductUrl)
+        viewModel?.getProductsData(linkType: .ProductUrl)
         let loader = self.loader()
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [self] in
             let updatedProducts = self.viewModel?.getProductDetails()
