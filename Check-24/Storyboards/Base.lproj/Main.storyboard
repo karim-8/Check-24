@@ -96,6 +96,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="RGc-N9-wrh" id="o34-bc-XSZ"/>
+                                    <outlet property="delegate" destination="RGc-N9-wrh" id="h2h-LI-OBv"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TS2-Dl-PKy"/>

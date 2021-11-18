@@ -30,9 +30,8 @@ class ProductsHomeViewController: UIViewController {
     var productsDetails: [Products]?
     var filteredProducts = [Products]()
     var productTypeName = ""
-    var currentPageIndex = 0
-    var headerTitle:String?
-    var headerSubTitle: String?
+    var headerTitle = "vv"
+    var headerSubTitle = "vv?"
         
     //MARK:- VIEW DID LOAD
     override func viewDidLoad() {
@@ -46,7 +45,10 @@ class ProductsHomeViewController: UIViewController {
         setCollectionIndicator()
         initSearchController()
         initRefreshController()
+        
     }
+    
+
     
     //MARK:- VIEW WILL APPEAR
     override func viewWillAppear(_ animated: Bool) {
@@ -70,10 +72,10 @@ class ProductsHomeViewController: UIViewController {
     
     //MARK:- SETUP TABLE VIEW CELL
     func setupNotAvailbleTableViewCell() {
-        let nib = UINib(nibName: "ProdHomeTableViewCell", bundle: nil)
-        productsTableView.register(nib, forCellReuseIdentifier: "notAvailbleCell")
-        productsTableView.separatorColor = .clear
-        productsTableView.reloadData()
+//        let nib = UINib(nibName: "ProdHomeTableViewCell", bundle: nil)
+//        productsTableView.register(nib, forCellReuseIdentifier: "notAvailbleCell")
+//        productsTableView.separatorColor = .clear
+//        productsTableView.reloadData()
     }
     
     //MARK:- SETUP COLLECTION VIEW CELL
@@ -123,7 +125,8 @@ class ProductsHomeViewController: UIViewController {
     //MARK:- SET COLLECTION INDICATOR
     func setCollectionIndicator() {
         indicatorView.backgroundColor = .lightGray
-        if let titles = menuTitles![0].filters {
+        
+        if let titles = menuTitles {
             indicatorView.frame = CGRect(x: menuCollectionView.bounds.minX, y: menuCollectionView.bounds.maxY - indicatorHeight, width: self.menuCollectionView.bounds.width / CGFloat(titles.count), height: indicatorHeight)
         }
         menuCollectionView.addSubview(indicatorView)
@@ -154,16 +157,23 @@ class ProductsHomeViewController: UIViewController {
             }
             selectedIndexPath = IndexPath(item: selectedIndex, section: 0)
             menuCollectionView.selectItem(at: selectedIndexPath, animated: true, scrollPosition: .centeredVertically)
-          //  refreshContent(index: 1)
+            refreshContent()
         }
     }
     
     //MARK:- REFRESH CONTENT
-    func refreshContent(index: Int){
+    func refreshContent(){
         viewModel?.getEventsData(linkType: .ProductUrl)
         let loader = self.loader()
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [self] in
-            var updatedProducts = self.viewModel?.getProductDetails()
+            let updatedProducts = self.viewModel?.getProductDetails()
+            self.productsDetails = updatedProducts
+            let filters = self.viewModel?.getFilters()
+            self.menuTitles = filters
+            let title = self.viewModel?.headerTitle
+            let sub = self.viewModel?.headerSubTitle
+            self.headerTitle = title ?? ""
+            self.headerSubTitle = sub ?? ""
             self.productsTableView.reloadData()
             self.stopLoader(loader: loader)
 

@@ -22,6 +22,7 @@ class ProdHomeTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
+        print("66666 \(productprice)")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

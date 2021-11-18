@@ -49,6 +49,20 @@ class ProductsHomeViewModel {
         return self.productDetails
     }
     
+    //MARK:- GET FILTERS
+    func getFilters() -> [String]{
+        return self.productFilters
+    }
+    
+    //MARK:- GET TITLE
+    func getTitle() -> String {
+        return self.headerTitle
+    }
+    
+    func getdescription() -> String {
+        return self.headerSubTitle
+    }
+    
     //MARK:- GET SWIPING PAGE
     func getSwipigPage(countriesTable: UITableView, scrollView: UIScrollView, currentPageIndex: Int, eventType: String) -> Int {
         
