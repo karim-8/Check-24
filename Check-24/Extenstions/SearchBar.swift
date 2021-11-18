@@ -20,8 +20,8 @@ extension ProductsHomeViewController: UISearchResultsUpdating, UISearchBarDelega
     
     func filterForSearchTextAndScopeButton(searchText: String, scopeButton: String = "All")  {
         var searchTextMatch = false
-        if let eventDeatails = eventDetails {
-            filteredEvent = eventDeatails.filter { item in
+        if let eventDeatails = productsDetails {
+            filteredProducts = eventDeatails.filter { item in
                 //You can check if another button with another logic
                 let scopeMatch = (scopeButton == "All" || ((item.name?.lowercased().contains(searchText.lowercased())) != nil))
                 if searchController.searchBar.text != "" {
@@ -34,7 +34,7 @@ extension ProductsHomeViewController: UISearchResultsUpdating, UISearchBarDelega
                     return scopeMatch
                 }
             }
-            countriesTable.reloadData()
+            productsTableView.reloadData()
         }
     }
 }

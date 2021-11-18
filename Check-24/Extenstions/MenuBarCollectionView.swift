@@ -17,7 +17,7 @@ extension ProductsHomeViewController : UICollectionViewDelegate, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuBarCollectionViewCell", for: indexPath) as? MenuBarCollectionViewCell
-        cell?.setupCell(text: menuTitles?[indexPath.item].name ?? "")
+        cell?.setupCell(text: menuTitles?[indexPath.item].filters?[indexPath.row] ?? "")
         return cell ?? UICollectionViewCell()
     }
     
@@ -29,7 +29,7 @@ extension ProductsHomeViewController : UICollectionViewDelegate, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
         selectedIndex = indexPath.item
-        eventTypeName = menuTitles?[indexPath.row].name ?? ""
-        refreshContent(index: indexPath.row)
+        productTypeName = menuTitles?[indexPath.row].filters?[indexPath.row] ?? ""
+        //refreshContent(index: indexPath.row)
     }
 }

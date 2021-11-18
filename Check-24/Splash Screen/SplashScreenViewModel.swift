@@ -30,9 +30,12 @@ class SplashScreenViewModel {
     //MARK:- PROPERTIES
     private let coordinator: SplashScreenCoordinator?
     private let viewController: UIViewController?
-    var eventsTypes: BaseProduct?
-    //var eventDetails = [EventData]()
-    //let presistance = PresesistancService.shared
+    var productsTypes: BaseProduct?
+    var productDetails = [Products]()
+    var productFilters = [String]()
+    var headerTitle = ""
+    var headerSubTitle = ""
+
     
     //MARK:- INIT
     init(coordinator: SplashScreenCoordinator, view: UIViewController) {
@@ -60,25 +63,25 @@ class SplashScreenViewModel {
     
     //MARK:- ANIMATION EXCUTION
     func animationExcution(view: UIView, bevyLogo: UIImageView) {
-        UIView.animate(withDuration: 3, animations: {
+        UIView.animate(withDuration: 2, animations: {
             bevyLogo.alpha = 0
         },completion: { animationDone in
             if animationDone {
                 DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
-                    self.coordinator?.navigateTo()
+                    self.coordinator?.navigateTo(productDetails: self.productDetails, productFilters: self.productFilters, headerTitle: self.headerTitle, headerSubTitle: self.headerSubTitle)
                 })
             }
         })
     }
     
-    //MARK:- GET EVENTS DATA
-    func getEventsData(linkType: UrlEndPoints) {
+    //MARK:- GET PRODUCTS DATA
+    func getProductsData(linkType: UrlEndPoints) {
         let parameters = ""
         let url = Request(url: linkType.rawValue, param: parameters)
         NetworkClient().get(request: url) { [weak self] result in
             switch result {
             case .success(let product):
-                self?.decodeResult(jsonData: product, link: linkType)
+                self?.decodeResult(jsonData: product)
             case .failure(let error):
                 print("Error in VM... \(error)")
             }
@@ -86,12 +89,17 @@ class SplashScreenViewModel {
     }
 
     //MARK:- DECODE JSON RESULT
-    func decodeResult(jsonData: Data, link: UrlEndPoints) {
+    func decodeResult(jsonData: Data) {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         decoder.dateDecodingStrategy = .secondsSince1970
-        print("-------------")
-        print("......\(jsonData)")
+        let eventsData = try? decoder.decode(BaseProduct.self, from: jsonData)
+        if let events = eventsData {
+            self.productDetails = events.products ?? [Products]()
+            self.productFilters = events.filters ?? [String]()
+            self.headerTitle = events.header?.headerTitle ?? ""
+            self.headerSubTitle = events.header?.headerDescription ?? ""
+        }
     }
     
 }

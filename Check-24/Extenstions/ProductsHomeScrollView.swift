@@ -12,7 +12,7 @@ extension ProductsHomeViewController: UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
-        let currentPage = viewModel?.getSwipigPage(countriesTable: countriesTable, scrollView: scrollView, currentPageIndex: currentPageIndex, eventType: eventTypeName)
+        let currentPage = viewModel?.getSwipigPage(countriesTable: productsTableView, scrollView: scrollView, currentPageIndex: currentPageIndex, eventType: productTypeName)
         currentPageIndex = currentPage ?? 0
     }
 }

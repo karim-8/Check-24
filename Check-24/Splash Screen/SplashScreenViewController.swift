@@ -17,7 +17,7 @@ class SplashScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        getEventsTypes()
+        getProductsTypes()
         setBackGroundColor()
         createSplashLogo()
     }
@@ -28,9 +28,9 @@ class SplashScreenViewController: UIViewController {
         viewModel = SplashScreenViewModel(coordinator: coordinator, view: self)
     }
     
-    //MARK:- GET EVENTS TYPES
-    func getEventsTypes() {
-        viewModel?.getEventsData(linkType: .ProductUrl)
+    //MARK:- GET PRODUCTS
+    func getProductsTypes() {
+        viewModel?.getProductsData(linkType: .ProductUrl)
     }
     
     //MARK:- VIEW DID LAYOUT SUBVIEW

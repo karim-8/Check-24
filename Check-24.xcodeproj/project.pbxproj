@@ -18,7 +18,6 @@
 		8A0541E1274679E1006A80E2 /* ActivityLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0541E0274679E1006A80E2 /* ActivityLoader.swift */; };
 		8A0541E327467A0B006A80E2 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0541E227467A0B006A80E2 /* ImageView.swift */; };
 		8A0541E527467A2A006A80E2 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0541E427467A2A006A80E2 /* SearchBar.swift */; };
-		8A0541E727467A57006A80E2 /* ProductsHomeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0541E627467A57006A80E2 /* ProductsHomeTableView.swift */; };
 		8A0541E927467AA5006A80E2 /* MenuBarCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0541E827467AA5006A80E2 /* MenuBarCollectionView.swift */; };
 		8A0541EB27467AD5006A80E2 /* ProductsHomeScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0541EA27467AD5006A80E2 /* ProductsHomeScrollView.swift */; };
 		8A864C0B27463E0800DF3193 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A864C0A27463E0800DF3193 /* AppDelegate.swift */; };
@@ -78,7 +77,6 @@
 		8A0541E0274679E1006A80E2 /* ActivityLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLoader.swift; sourceTree = "<group>"; };
 		8A0541E227467A0B006A80E2 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		8A0541E427467A2A006A80E2 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
-		8A0541E627467A57006A80E2 /* ProductsHomeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsHomeTableView.swift; sourceTree = "<group>"; };
 		8A0541E827467AA5006A80E2 /* MenuBarCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarCollectionView.swift; sourceTree = "<group>"; };
 		8A0541EA27467AD5006A80E2 /* ProductsHomeScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsHomeScrollView.swift; sourceTree = "<group>"; };
 		8A864C0727463E0800DF3193 /* Check-24.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Check-24.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -325,7 +323,6 @@
 				8A0541E0274679E1006A80E2 /* ActivityLoader.swift */,
 				8A0541E227467A0B006A80E2 /* ImageView.swift */,
 				8A0541E427467A2A006A80E2 /* SearchBar.swift */,
-				8A0541E627467A57006A80E2 /* ProductsHomeTableView.swift */,
 				8A0541E827467AA5006A80E2 /* MenuBarCollectionView.swift */,
 				8A0541EA27467AD5006A80E2 /* ProductsHomeScrollView.swift */,
 			);
@@ -597,7 +594,6 @@
 				8A0541E1274679E1006A80E2 /* ActivityLoader.swift in Sources */,
 				8A864C5D27464F8500DF3193 /* ProductsDetailsViewController.swift in Sources */,
 				8A864C5B27464F1400DF3193 /* ProductsCoordinator.swift in Sources */,
-				8A0541E727467A57006A80E2 /* ProductsHomeTableView.swift in Sources */,
 				8A864C5527464D3500DF3193 /* Price.swift in Sources */,
 				8A0541EB27467AD5006A80E2 /* ProductsHomeScrollView.swift in Sources */,
 				8A0541DE2746744A006A80E2 /* NotAvalibleTableViewCell.swift in Sources */,

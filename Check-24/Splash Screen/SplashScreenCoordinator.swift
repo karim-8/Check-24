@@ -16,7 +16,9 @@ class SplashScreenCoordinator {
     }
     
     //MARK:- NAVIGATE TO
-    func navigateTo() {
+ 
+
+    func navigateTo(productDetails: [Products], productFilters: [String], headerTitle: String, headerSubTitle: String ) {
         let viewModel: ProductsHomeViewModel = ProductsHomeViewModel()
         let coordinator: ProductsHomeCoordinator = ProductsHomeCoordinator()
         
@@ -24,6 +26,9 @@ class SplashScreenCoordinator {
         
         productsHomeviewcotroller?.viewModel = viewModel
         productsHomeviewcotroller?.coordinator = coordinator
+        productsHomeviewcotroller?.menuTitles = productFilters
+        productsHomeviewcotroller?.productsDetails = productDetails
+        
         
         let navigationController = UINavigationController(rootViewController: productsHomeviewcotroller!)
         navigationController.modalTransitionStyle = .crossDissolve

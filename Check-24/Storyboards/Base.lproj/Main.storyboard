@@ -115,6 +115,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Products Home" id="4Dc-kj-NEB"/>
                     <connections>
+                        <outlet property="menuCollectionView" destination="7bd-A2-gdK" id="QlX-Mw-ioV"/>
+                        <outlet property="productsTableView" destination="beO-Id-K8m" id="g67-pS-ic6"/>
+                        <outlet property="upperHeaderDescription" destination="Vb3-JZ-d0M" id="XZp-Lz-NeM"/>
+                        <outlet property="upperHeaderTitle" destination="Oyf-Qw-NaL" id="GH3-68-Nxl"/>
+                        <outlet property="upperHeaderView" destination="qMG-vR-eMx" id="AMj-6h-mIn"/>
                         <segue destination="uau-Lc-VlV" kind="show" id="wXE-9O-LgW"/>
                     </connections>
                 </viewController>
