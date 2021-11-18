@@ -16,19 +16,21 @@ class SplashScreenCoordinator {
     }
     
     //MARK:- NAVIGATE TO
+    //data to be send
     func navigateTo() {
         let viewModel: ProductsHomeViewModel = ProductsHomeViewModel()
+        let coordinator: ProductsHomeCoordinator = ProductsHomeCoordinator()
         
-        let homeViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "home") as? ProductsHomeViewModel
+        let productsHomeviewcotroller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "home") as? ProductsHomeViewController
         
-        
-        homeViewController?.viewModel = viewModel
-        homeViewController?.menuTitles = eventTypeData
-        homeViewController?.eventDetails = eventsdetails
-        let navigationController = UINavigationController(rootViewController: homeViewController!)
+        productsHomeviewcotroller?.viewModel = viewModel
+        productsHomeviewcotroller?.coordinator = coordinator
+                
+        let navigationController = UINavigationController(rootViewController: productsHomeviewcotroller!)
         navigationController.modalTransitionStyle = .crossDissolve
         navigationController.modalPresentationStyle = .fullScreen
-        view.present(navigationController, animated: true, completion: nil)
+
+        navigationView?.present(navigationController, animated: true, completion: nil)
     }
 }
 

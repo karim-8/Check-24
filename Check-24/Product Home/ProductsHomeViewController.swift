@@ -9,6 +9,9 @@ import UIKit
 
 class ProductsHomeViewController: UIViewController {
 
+    var viewModel: ProductsHomeViewModel?
+    var coordinator: ProductsHomeCoordinator?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -24,13 +24,13 @@ class SplashScreenViewController: UIViewController {
     
     //MARK:- SETUP VIEW
     private func setupView() {
-        let coordinator = 
+        let coordinator = SplashScreenCoordinator(view: self)
         viewModel = SplashScreenViewModel(coordinator: coordinator, view: self)
     }
     
     //MARK:- GET EVENTS TYPES
     func getEventsTypes() {
-        viewModel?.getEventsData(linkType: .EventType)
+        viewModel?.getEventsData(linkType: .ProductUrl)
     }
     
     //MARK:- VIEW DID LAYOUT SUBVIEW
@@ -41,8 +41,8 @@ class SplashScreenViewController: UIViewController {
     //MARK:- VIEW DID APPEAR
     override func viewDidAppear(_ animated: Bool) {
         DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
-            let image = self.viewModel?.animateSplashLogo(view: self.view, bevyLogo: self.bevyLogo)
-            self.bevyLogo = image!
+            let image = self.viewModel?.animateSplashLogo(view: self.view, check24Logo: self.check_24_Logo)
+            self.check_24_Logo = image!
         })
     }
     
@@ -53,13 +53,13 @@ class SplashScreenViewController: UIViewController {
     
     //MARK:- CRETATE SPLASH LOGO
     private func createSplashLogo() {
-        bevyLogo = {
+        check_24_Logo = {
             let logoImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 250, height: 150))
             logoImage.image = UIImage(named: "bevy-logo")
             logoImage.sizeToFit()
             return logoImage
         }()
-        view.addSubview(bevyLogo)
+        view.addSubview(check_24_Logo)
     }
     
     //MARK:- DEINIT
