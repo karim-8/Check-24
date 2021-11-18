@@ -10,9 +10,8 @@ import CoreData
 class SplashScreenViewController: UIViewController {
     
     //MARK:- PROPERTIES
-    private var bevyLogo = UIImageView()
+    private var check_24_Logo = UIImageView()
     var viewModel: SplashScreenViewModel?
-    private let coordinator = SplashScreenCoordinator()
     
     //MARK:- VIEW DID LOAD
     override func viewDidLoad() {
@@ -23,27 +22,28 @@ class SplashScreenViewController: UIViewController {
         createSplashLogo()
     }
     
+    //MARK:- SETUP VIEW
+    private func setupView() {
+        let coordinator = 
+        viewModel = SplashScreenViewModel(coordinator: coordinator, view: self)
+    }
+    
     //MARK:- GET EVENTS TYPES
     func getEventsTypes() {
-       // viewModel?.getEventsData(linkType: .EventType)
+        viewModel?.getEventsData(linkType: .EventType)
     }
     
     //MARK:- VIEW DID LAYOUT SUBVIEW
     override func viewDidLayoutSubviews() {
-        bevyLogo.center = view.center
+        check_24_Logo.center = view.center
     }
     
     //MARK:- VIEW DID APPEAR
     override func viewDidAppear(_ animated: Bool) {
         DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
-        //    let image = self.viewModel?.animateSplashLogo(view: self.view, bevyLogo: self.bevyLogo)
-        //    self.bevyLogo = image!
+            let image = self.viewModel?.animateSplashLogo(view: self.view, bevyLogo: self.bevyLogo)
+            self.bevyLogo = image!
         })
-    }
-    
-    //MARK:- SETUP VIEW
-    private func setupView() {
-      //  viewModel = SplashScreenViewModel(coordinator: coordinator, view: self)
     }
     
     //MARK:- SET BACKGROUND COLOR

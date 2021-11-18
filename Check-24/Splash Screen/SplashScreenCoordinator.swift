@@ -17,8 +17,11 @@ class SplashScreenCoordinator {
     
     //MARK:- NAVIGATE TO
     func navigateTo() {
-        let viewModel: HomeEventsViewModel = HomeEventsViewModel()
-        let homeViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "home") as? HomeEventsViewController
+        let viewModel: ProductsHomeViewModel = ProductsHomeViewModel()
+        
+        let homeViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "home") as? ProductsHomeViewModel
+        
+        
         homeViewController?.viewModel = viewModel
         homeViewController?.menuTitles = eventTypeData
         homeViewController?.eventDetails = eventsdetails
