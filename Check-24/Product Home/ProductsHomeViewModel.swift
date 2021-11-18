@@ -17,7 +17,7 @@ class ProductsHomeViewModel {
     var headerSubTitle = ""
     
     
-    //MARK:- GET EVENTS DATA
+    //MARK:- GET PRODUCTS DATA
     func getEventsData(linkType: UrlEndPoints) {
         let url = Request(url: linkType.rawValue, param: "")
         NetworkClient().get(request: url) { [weak self] result in

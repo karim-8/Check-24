@@ -7,14 +7,6 @@
 
 import UIKit
 
-/*
- @IBOutlet weak var cellImage: UIImageView!
- @IBOutlet weak var ProductTitle: UILabel!
- @IBOutlet weak var productDescription: UILabel!
- @IBOutlet weak var productprice: UILabel!
- @IBOutlet weak var ratingView: CosmosView!
- */
-
 //MARK:- EVENTS TABLE VIEW DELEGATE & DATA SOURCE
 extension ProductsHomeViewController : UITableViewDelegate, UITableViewDataSource {
     
