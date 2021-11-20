@@ -10,6 +10,9 @@ import UIKit
 //MARK:- URL END POINTS
 enum UrlEndPoints: String {
     case ProductUrl = "http://app.check24.de/products-test.json"
+    
+    
+    
 }
 
 //MARK:- REQUEST
@@ -84,6 +87,7 @@ class SplashScreenViewModel {
                 self?.decodeResult(jsonData: product)
             case .failure(let error):
                 print("Error in VM... \(error)")
+                //have error
             }
         }
     }

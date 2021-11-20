@@ -39,6 +39,8 @@ extension ProductsHomeViewController : UITableViewDelegate, UITableViewDataSourc
         
         let productsHomeviewcotroller = (UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "details") as? ProductsDetailsViewController)!
         
+        //coordinator .navga
+        
 //        let navigationController = UINavigationController(rootViewController: productsHomeviewcotroller!)
 //        navigationController.modalTransitionStyle = .crossDissolve
 //        navigationController.modalPresentationStyle = .fullScreen

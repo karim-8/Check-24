@@ -162,7 +162,7 @@ class ProductsHomeViewController: UIViewController {
     }
     
     //MARK:- REFRESH CONTENT
-    func refreshContent(){
+    func refreshContent() {
         viewModel?.getProductsData(linkType: .ProductUrl)
         let loader = self.loader()
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [self] in

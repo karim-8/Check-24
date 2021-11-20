@@ -87,6 +87,7 @@ class ProductsHomeViewModel {
     //MARK:- GET EVENT BY TYPE
     func getEventByType(currentPageIndex: Int, productsTable: UITableView) {
         getProductsData(linkType: .ProductUrl)
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             let updatedEvents = self.getProductDetails()
             self.productDetails = updatedEvents

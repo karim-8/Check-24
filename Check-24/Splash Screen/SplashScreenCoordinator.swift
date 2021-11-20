@@ -22,8 +22,10 @@ class SplashScreenCoordinator {
         
         let productsHomeviewcotroller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "home") as? ProductsHomeViewController
         
+        //
         productsHomeviewcotroller?.viewModel = viewModel
         productsHomeviewcotroller?.coordinator = coordinator
+        
         productsHomeviewcotroller?.menuTitles = productFilters
         productsHomeviewcotroller?.productsDetails = productDetails
         productsHomeviewcotroller?.headerTitle = headerTitle
